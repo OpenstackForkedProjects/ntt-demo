@@ -53,7 +53,7 @@ def network_discovery(tenant_data):
     for tenant in tenant_data:
         
         networks=neutron.list_networks(tenant_id=tenant['id'])['networks']
-         
+        # list subnets under networks of all tenants
         for net in networks:
             nets={}
             if net['tenant_id'] == tenant['id']:
